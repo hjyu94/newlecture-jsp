@@ -22,7 +22,11 @@ public class Nana extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
 
         PrintWriter out = resp.getWriter();
-        out.println("안녕 ~~~");
+
+        int cnt = Integer.parseInt(req.getParameter("cnt"));
+        for(int i=0; i<cnt; ++i) {
+            out.println((i+1) + ": 안녕 ~~~");
+        }
     }
 
 }
