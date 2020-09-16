@@ -16,6 +16,13 @@ public class NoticeReg extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
 
+        /*
+            멀티 바이트 문자 전송 문제: 사용자로부터 값 입력 받아서 전송하기
+            톰캣의 기본 방식은 사용자가 입력한 값을 ISO-8859-1 방식으로 디코딩함.
+            사용자가 입력한 값을 UTF-8 로 받아볼 것임을 설정해줘야 한다.
+         */
+        req.setCharacterEncoding("UTF-8");
+
         PrintWriter out = resp.getWriter();
 
         String title = req.getParameter("title");
