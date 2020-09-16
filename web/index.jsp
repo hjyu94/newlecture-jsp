@@ -12,5 +12,7 @@
 </head>
 <body>
     <h1>Hello Servlets!</h1>
+    <a href="hi">인사하기</a><br >
+    <a href="hi?cnt=3">인사하기</a><br >
 </body>
 </html>

@@ -23,7 +23,11 @@ public class Nana extends HttpServlet {
 
         PrintWriter out = resp.getWriter();
 
-        int cnt = Integer.parseInt(req.getParameter("cnt"));
+        String cnt_ = req.getParameter("cnt");
+        int cnt = 10;
+        if(cnt_ != null && !cnt_.isBlank()) {
+            cnt = Integer.parseInt(cnt_);
+        }
         for(int i=0; i<cnt; ++i) {
             out.println((i+1) + ": 안녕 ~~~");
         }
